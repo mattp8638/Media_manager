@@ -244,28 +244,28 @@ Database:
 
 Radarr:
   api_key: YOUR_RADARR_API_KEY
-  server_url: http://10.252.0.2:7878
+  server_url: http://127.0.0.1:7878
 
 Sonarr:
   api_key: YOUR_SONARR_API_KEY
-  server_url: http://10.252.0.2:8989
+  server_url: http://127.0.0.1:8989
 
 Lidarr:
   api_key: YOUR_LIDARR_API_KEY
-  server_url: http://10.252.0.2:8686
+  server_url: http://127.0.0.1:8686
 
 Jellyfin:
   api_key: YOUR_JELLYFIN_API_KEY
-  server_url: http://10.252.0.2:8096
+  server_url: http://127.0.0.1:8096
 
 qBittorrent:
-  host: http://10.252.0.2:8080
+  host: http://127.0.0.1:8080
   username: admin
   password: YOUR_QBITTORRENT_PASSWORD
 
 Jackett:
   api_key: YOUR_JACKETT_API_KEY
-  server_url: http://10.252.0.2:9117/
+  server_url: http://127.0.0.1:9117/
   categories:
     Movies: '2000'
     TV: '5000'
@@ -542,8 +542,8 @@ https://media.localhost.com
 **Debug**:
 ```bash
 # Test connectivity
-curl -I http://10.252.0.2:7878/api/v3/system/status
-curl -H "X-Api-Key: YOUR_KEY" http://10.252.0.2:7878/api/v3/system/status
+curl -I http://127.0.0.1:7878/api/v3/system/status
+curl -H "X-Api-Key: YOUR_KEY" http://127.0.0.1:7878/api/v3/system/status
 
 # Check logs
 tail -f /var/www/media_manager/logs/error.log
@@ -592,7 +592,7 @@ sudo systemctl restart media-management
 3. View logs for API errors
 4. Test manually:
    ```bash
-   curl -H "X-Api-Key: YOUR_KEY" http://10.252.0.2:7878/api/v3/movie
+   curl -H "X-Api-Key: YOUR_KEY" http://127.0.0.1:7878/api/v3/movie
    ```
 
 ### Language Filtering Issues
@@ -679,5 +679,6 @@ Built with:
 
 **Last Updated**: February 19, 2026  
 **Version**: 2.0 (Production Ready)
+
 
 
