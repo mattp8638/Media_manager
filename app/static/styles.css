@@ -1,0 +1,295 @@
+:root {
+  --custom-accent-color: #00d4ff;
+  --custom-accent-hover-color: #007bbd;
+  --custom-card-bg: #1e2a38;
+  --custom-nav-bg: rgba(26, 26, 26, 0.95);
+  /* Assuming --bs-body-color is defined by Bootstrap in dark theme for text */
+}
+
+/* Global Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Keep custom font */
+    /* background: linear-gradient(to bottom, #141e30, #243b55); */ /* Handled by Bootstrap dark theme */
+    /* color: #ffffff; */ /* Handled by Bootstrap dark theme */
+    margin: 0; /* Reset margin */
+    padding: 0; /* Reset padding */
+    line-height: 1.6; /* Keep custom line-height */
+    scroll-behavior: smooth; /* Keep custom scroll-behavior */
+    /* Bootstrap's [data-bs-theme="dark"] will handle background-color and color */
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--custom-nav-bg);
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    color: #f3f3f3;
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #141e30; /* Keep original text color on hover or change as needed */
+    background-color: var(--custom-accent-color);
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+/* Buttons */
+button, .btn { /* This is a general override; Bootstrap specific .btn classes might need more specific overrides if used */
+    background-color: var(--custom-accent-color);
+    border: none; /* Consider if Bootstrap's border is desired */
+    padding: 12px 25px;
+    color: #ffffff;
+    cursor: pointer;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover, .btn:hover {
+    background-color: var(--custom-accent-hover-color);
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li a {
+        margin: 5px 0;
+    }
+}
+/* Collapsible Menu for Mobile */
+nav ul.collapsed {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: var(--custom-nav-bg); /* Use variable for collapsed nav too */
+    padding: 1rem 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+}
+
+nav ul.collapsed.show {
+    display: flex;
+}
+
+@media (max-width: 768px) {
+    nav .menu-toggle {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    nav ul.collapsed.show {
+        display: flex;
+    }
+
+    nav ul li a {
+        padding: 1rem;
+        text-align: center;
+        width: 100%;
+    }
+}
+
+/* Hero Section - Keeping the more detailed second version */
+.hero {
+    text-align: center;
+    padding: 150px 20px;
+    background: url('/static/hero-bg.jpg') no-repeat center center/cover;
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.7);
+    position: relative;
+    z-index: 2;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+}
+
+.hero p {
+    font-size: 1.6rem;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 2.5rem;
+}
+
+.hero .btn { /* Specific hero button, inherits from general .btn but can override */
+    background-color: var(--custom-accent-color);
+    /* border: none; */ /* from general .btn */
+    color: #ffffff;
+    padding: 15px 35px;
+    font-size: 1.2rem;
+    /* cursor: pointer; */ /* from general .btn */
+    border-radius: 30px; /* Overrides general .btn radius */
+    /* text-transform: uppercase; */ /* from general .btn */
+    /* font-weight: bold; */ /* from general .btn */
+    /* transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; */ /* from general .btn, but adds box-shadow transition */
+    position: relative;
+    z-index: 2;
+}
+
+.hero .btn:hover {
+    background-color: var(--custom-accent-hover-color);
+    /* transform: scale(1.1); */ /* from general .btn:hover, adjusted if needed */
+    box-shadow: 0 5px 20px rgba(0, 123, 189, 0.5);
+}
+
+/* Cards - Keeping the more detailed second version */
+.card { /* This will style custom cards. Bootstrap .card will have its own base styles */
+    background-color: var(--custom-card-bg);
+    border-radius: 20px;
+    padding: 30px;
+    margin: 30px 0;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
+}
+
+.card h3 {
+    margin-top: 0;
+    font-size: 1.8rem;
+    color: var(--custom-accent-color);
+    margin-bottom: 15px;
+}
+
+.card p {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: #d0d0d0;
+}
+
+/* Footer - Keeping the more detailed second version */
+footer {
+    text-align: center;
+    padding: 30px;
+    background-color: var(--custom-nav-bg);
+    color: #f3f3f3;
+    font-size: 0.9rem;
+    border-top: 2px solid var(--custom-accent-color);
+}
+
+footer a {
+    color: var(--custom-accent-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--custom-accent-hover-color);
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+}
+
+/* Custom Edit Modal Styling */
+.custom-edit-modal {
+    display: none; /* Initially hidden, JS will control this */
+    position: fixed;
+    z-index: 1050; /* Ensure it's above other content, Bootstrap's .modal z-index is 1050/1055 */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.7); /* Dimmed background overlay */
+}
+
+.custom-edit-modal-content {
+    background-color: var(--custom-card-bg); /* Use card background for consistency */
+    color: var(--bs-body-color, #dee2e6); /* Inherit text color from Bootstrap's dark theme, fallback for safety */
+    margin: 10% auto; /* Centered, with margin from top */
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border for dark theme */
+    border-radius: 0.5rem; /* Rounded corners */
+    width: 80%;
+    max-width: 500px; /* Max width for the modal */
+    position: relative;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+}
+
+.custom-edit-modal-close {
+    color: #aaa; /* Standard close icon color */
+    float: right; /* Position to the right */
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 1; /* Ensure proper vertical alignment */
+}
+
+.custom-edit-modal-close:hover,
+.custom-edit-modal-close:focus {
+    color: var(--bs-body-color, #f8f9fa); /* Brighter on hover, fallback for safety */
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Ensure modal form elements are legible */
+.custom-edit-modal .form-label {
+    color: var(--bs-body-color, #dee2e6); /* Fallback for safety */
+}
+/* Inputs and Selects within the modal will use Bootstrap's default dark theme styling for form-control/form-select */
