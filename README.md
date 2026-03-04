@@ -168,7 +168,7 @@ spotipy==2.24.0
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                    Web Browser                              │
-│              https://media.tamsilcms.com                    │
+│              https://media.localhost.com                    │
 └──────────────────────┬──────────────────────────────────────┘
                        │ HTTPS
                        ▼
@@ -386,7 +386,7 @@ http://localhost:5000
 
 **Production**
 ```
-https://media.tamsilcms.com
+https://media.localhost.com
 ```
 
 ### Default Credentials
@@ -662,7 +662,7 @@ For issues and questions:
 - Check logs: `media-mgmt app-logs`
 - Review [Troubleshooting](#troubleshooting) section
 - Check GitHub issues
-- Contact: matt@tamsilcms.com
+- Contact: matt@localhost.com
 
 ---
 
@@ -679,4 +679,5 @@ Built with:
 
 **Last Updated**: February 19, 2026  
 **Version**: 2.0 (Production Ready)
+
 
