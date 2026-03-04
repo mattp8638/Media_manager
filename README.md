@@ -662,7 +662,7 @@ For issues and questions:
 - Check logs: `media-mgmt app-logs`
 - Review [Troubleshooting](#troubleshooting) section
 - Check GitHub issues
-- Contact: matt@localhost.com
+- This Project is not actively maintained, it was built as an educational tool for me to learn, whatever usage is used by others is not the responsibility nor the fault of the builder nor. I do not condone the use of torrenting apps for misuse of piracy
 
 ---
 
@@ -679,6 +679,7 @@ Built with:
 
 **Last Updated**: February 19, 2026  
 **Version**: 2.0 (Production Ready)
+
 
 
 
