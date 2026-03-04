@@ -1,0 +1,28 @@
+Database:
+  type: postgresql
+  host: 127.0.0.1
+  port: 5432
+  username: media_user
+  password: YOUR_DB_PASSWORD_HERE
+  database: media_management
+  track_modifications: false
+Jackett:
+  api_key: YOUR_JACKETT_API_KEY
+  categories:
+    Movies: '2000'
+    Music: '3000'
+    TV: '5000'
+  server_url: http://127.0.0.1:9117/
+Jellyfin:
+  api_key: YOUR_JELLYFIN_API_KEY
+  server_url: http://127.0.0.1:8096
+Secret_key: 'YOUR_SECRET_KEY_HERE'
+Spotify:
+  client_id: YOUR_SPOTIFY_CLIENT_ID
+  client_secret: YOUR_SPOTIFY_CLIENT_SECRET
+TMDb:
+  api_key: YOUR_TMDB_API_KEY
+qBittorrent:
+  host: http://127.0.0.1:8080
+  password: YOUR_QBITTORRENT_PASSWORD
+  username: admin
